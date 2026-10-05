@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferienwohnung Dorfgastein | Bergblick & Therme – Urlaub im Gasteinertal</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #1f3a2b;
+      --primary-light: #2e533e;
+      --accent: #d4a373;
+      --accent-hover: #b88655;
+      --airbnb-color: #ff385c;
+      --airbnb-hover: #e00b41;
+      --bg-light: #f8faf8;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-airbnb {
+      background-color: var(--airbnb-color);
+      color: white;
+      box-shadow: 0 4px 12px rgba(255, 56, 92, 0.3);
+    }
+
+    .btn-airbnb:hover {
+      background-color: var(--airbnb-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 56, 92, 0.4);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 70vh;
+      min-height: 480px;
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('exterior (1) (Groß).jpg') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      color: white;
+      padding: 40px 20px;
+      margin-bottom: 40px;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge {
+      background: rgba(252, 211, 77, 0.9);
+      color: #78350f;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      margin-bottom: 24px;
+      max-width: 650px;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Highlights Quick Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    /* Gallery Tabs & Grid */
+    .gallery-filter {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text-dark);
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 200px;
+      box-shadow: var(--shadow);
+      background-color: #cbd5e1;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 8px 12px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: white;
+      font-size: 0.8rem;
+    }
+
+    /* Region & Activities Cards */
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .activity-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .activity-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .activity-body {
+      padding: 20px;
+    }
+
+    .activity-body h3 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .activity-body p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* Therme Special Highlight Banner */
+    .therme-banner {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      color: white;
+      border-radius: var(--radius);
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .therme-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .therme-info p {
+      opacity: 0.9;
+      max-width: 650px;
+      font-size: 0.95rem;
+    }
+
+    /* Hosts Section */
+    .hosts-card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      box-shadow: var(--shadow);
+      flex-wrap: wrap;
+    }
+
+    .hosts-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--bg-light);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background-color: #cbd5e1;
+    }
+
+    .hosts-content h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .hosts-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* Call to Action Banner */
+    .cta-banner {
+      background: var(--primary);
+      color: white;
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-banner h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .cta-banner p {
+      opacity: 0.9;
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .therme-banner, .hosts-card { flex-direction: column; text-align: center; }
+      .hosts-img { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="#" class="brand">
+      <i class="fa-solid fa-mountain-sun"></i>
+      <span>Ferienwohnung Dorfgastein</span>
+    </a>
+    <div class="nav-buttons">
+      <a href="https://www.google.com/maps/search/?api=1&query=Unterberg+Dorfgastein" target="_blank" class="btn btn-outline">
+        <i class="fa-solid fa-location-dot"></i> Standort
+      </a>
+      <a href="https://www.airbnb.at/rooms/1771137160750411539?unique_share_id=4d18c051-dcaa-4752-b8ab-0dd1552a1e92&viralityEntryPoint=1&s=76" target="_blank" class="btn btn-airbnb">
+        <i class="fa-brands fa-airbnb"></i> Auf Airbnb buchen
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <span class="hero-badge"><i class="fa-solid fa-hot-tub-person"></i> Inkl. Alpentherme Eintritt</span>
+      <h1>Stilvolle Auszeit im Gasteinertal</h1>
+      <p>Erleben Sie Entspannung, Natur & Bergerlebnisse in unserem gemütlichen 42 m² Apartment am idyllischen Bauernhof in Unterberg bei Dorfgastein.</p>
+      <a href="https://www.airbnb.at/rooms/1771137160750411539?unique_share_id=4d18c051-dcaa-4752-b8ab-0dd1552a1e92&viralityEntryPoint=1&s=76" target="_blank" class="btn btn-airbnb" style="padding: 14px 28px; font-size: 1rem;">
+        <i class="fa-brands fa-airbnb"></i> Verfügbarkeit & Preise prüfen
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Quick Features -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+        <h3>Bis zu 4 Gäste</h3>
+        <p>1 Schlafzimmer, 2 Betten, gemütliches Ausziehsofa</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-water-ladder"></i></div>
+        <h3>Thermen-Eintritt inklusive</h3>
+        <p>Kostenloser täglicher Eintritt in die Alpentherme Bad Hofgastein</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+        <h3>Idylle am Bauernhof</h3>
+        <p>Tiere, Spielplatz & optionales Frühstücksbuffet</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-paw"></i></div>
+        <h3>Haustiere willkommen</h3>
+        <p>Bring deinen vierbeinigen Freund einfach mit</p>
+      </div>
+    </div>
+
+    <!-- Thermen Special Banner -->
+    <div class="therme-banner">
+      <div class="therme-info">
+        <h3><i class="fa-solid fa-spa"></i> Dein Plus: Freier Eintritt in die Alpentherme!</h3>
+        <p>Ab 2 Nächten Aufenthalt genießen unsere Gäste täglich kostenlosen unbegrenzten Zugang zur Alpentherme Bad Hofgastein inklusive der großzügigen Sauna World – ideal zum Erholen nach dem Wandern oder Skifahren!</p>
+      </div>
+      <a href="https://www.airbnb.at/rooms/1771137160750411539?unique_share_id=4d18c051-dcaa-4752-b8ab-0dd1552a1e92&viralityEntryPoint=1&s=76" target="_blank" class="btn btn-airbnb" style="background: white; color: #1e3a8a;">
+        Jetzt Urlaub sichern
+      </a>
+    </div>
+
+    <!-- Foto Galerie Section -->
+    <section>
+      <h2 class="section-title">Eindrücke aus der Unterkunft</h2>
+      <p class="section-subtitle">Werfen Sie einen Blick in unser Apartment, den Hof und die traumhafte Umgebung.</p>
+
+      <div class="gallery-filter">
+        <button class="filter-btn active" onclick="filterGallery('all')">Alle Fotos</button>
+        <button class="filter-btn" onclick="filterGallery('interior')">Interior & Wohnung</button>
+        <button class="filter-btn" onclick="filterGallery('exterior')">Außenbereich & Hof</button>
+        <button class="filter-btn" onclick="filterGallery('view')">Aussicht & Panorama</button>
+        <button class="filter-btn" onclick="filterGallery('plan')">Grundriss</button>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Interior Photos -->
+        <div class="gallery-item interior"><img src="Interior (1) (Groß).jpg" alt="Interior 1"><div class="gallery-caption">Interior</div></div>
+        <div class="gallery-item interior"><img src="Interior (2) (Groß).jpg" alt="Interior 2"><div class="gallery-caption">Interior</div></div>
+        <div class="gallery-item interior"><img src="Interior (3) (Groß).jpg" alt="Interior 3"><div class="gallery-caption">Interior</div></div>
+        <div class="gallery-item interior"><img src="Interior (4) (Groß).jpg" alt="Interior 4"><div class="gallery-caption">Interior</div></div>
+        <div class="gallery-item interior"><img src="Interior (5) (Groß).jpg" alt="Interior 5"><div class="gallery-caption">Interior</div></div>
+        <div class="gallery-item interior"><img src="Interior (6) (Groß).jpg" alt="Interior 6"><div class="gallery-caption">Interior</div></div>
+
+        <!-- Exterior Photos -->
+        <div class="gallery-item exterior"><img src="exterior (1) (Groß).jpg" alt="Exterior 1"><div class="gallery-caption">Außenbereich</div></div>
+        <div class="gallery-item exterior"><img src="exterior (2) (Groß).jpg" alt="Exterior 2"><div class="gallery-caption">Außenbereich</div></div>
+        <div class="gallery-item exterior"><img src="exterior (3) (Groß).jpg" alt="Exterior 3"><div class="gallery-caption">Außenbereich</div></div>
+        <div class="gallery-item exterior"><img src="exterior (4) (Groß).jpg" alt="Exterior 4"><div class="gallery-caption">Außenbereich</div></div>
+        <div class="gallery-item exterior"><img src="exterior (5) (Groß).jpg" alt="Exterior 5"><div class="gallery-caption">Außenbereich</div></div>
+        <div class="gallery-item exterior"><img src="exterior (6) (Groß).jpg" alt="Exterior 6"><div class="gallery-caption">Außenbereich</div></div>
+        <div class="gallery-item exterior"><img src="exterior (7) (Groß).jpg" alt="Exterior 7"><div class="gallery-caption">Außenbereich</div></div>
+
+        <!-- View Photos -->
+        <div class="gallery-item view"><img src="view (1) (Groß).jpg" alt="View 1"><div class="gallery-caption">Bergblick</div></div>
+        <div class="gallery-item view"><img src="view (2) (Groß).jpg" alt="View 2"><div class="gallery-caption">Bergblick</div></div>
+        <div class="gallery-item view"><img src="view (3) (Groß).jpg" alt="View 3"><div class="gallery-caption">Bergblick</div></div>
+        <div class="gallery-item view"><img src="view (4) (Groß).jpg" alt="View 4"><div class="gallery-caption">Bergblick</div></div>
+        <div class="gallery-item view"><img src="view (5) (Groß).jpg" alt="View 5"><div class="gallery-caption">Bergblick</div></div>
+
+        <!-- Plan Photo -->
+        <div class="gallery-item plan"><img src="plan (Groß).jpg" alt="Grundriss"><div class="gallery-caption">Wohnungsplan</div></div>
+      </div>
+    </section>
+
+    <!-- Region & Aktivitäten Section -->
+    <section>
+      <h2 class="section-title">Erlebnisse & Region Gasteinertal</h2>
+      <p class="section-subtitle">Dorfgastein ist der perfekte Ausgangspunkt für Abenteuer, Erholung und Naturgenuss – zu jeder Jahreszeit.</p>
+
+      <div class="activity-grid">
+        <div class="activity-card">
+          <img src="view (1) (Groß).jpg" alt="Wandern & Gipfel">
+          <div class="activity-body">
+            <h3><i class="fa-solid fa-person-hiking"></i> Wandern & Bergsteigen</h3>
+            <p>Über 600 km markierte Wege! Entdecken Sie den Erlebnisberg Fulseck, idyllische Themenwege wie den Pilzweg, entspannte Runden um den Spiegelsee oder anspruchsvolle Touren zum Schuhflicker.</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <img src="exterior (2) (Groß).jpg" alt="Skifahren & Wintersport">
+          <div class="activity-body">
+            <h3><i class="fa-solid fa-person-skiing"></i> Skischaukel Dorfgastein-Großarltal</h3>
+            <p>Vielfältige Pistenkilometer, top-präparierte Abfahrten und gemütliche Einkehrhütten. Im Winter wartet das Skigebiet direkt vor der Haustür mit Schneesicherheit und Bergpanorama.</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <img src="view (3) (Groß).jpg" alt="Action & Outdoor">
+          <div class="activity-body">
+            <h3><i class="fa-solid fa-bicycle"></i> Action & Outdoor-Spass</h3>
+            <p>Rasante Abfahrten mit Mountaincarts am Fulseck, E-MTB Touren durchs Tal, Pumptracks oder unvergessliche Tandem-Paragliding Flüge über das beeindruckende Gasteinertal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vielfältige Events in der Region (Gastein Highlights) -->
+    <section>
+      <h2 class="section-title">Vielfalt & Events im Gasteinertal</h2>
+      <p class="section-subtitle">Im Gasteinertal erwartet Sie das ganze Jahr über ein abwechslungsreiches Programm aus Kultur, Genuss, Sport & Wellness.</p>
+
+      <div class="features-grid">
+        <div class="feature-card" style="text-align: left;">
+          <div class="feature-icon"><i class="fa-solid fa-utensils"></i></div>
+          <h3>Kulinarik & Tradition</h3>
+          <p>Kulinarische Hofwanderungen, Bauernmärkte, Schaubrennerei-Besichtigungen und herrschaftliche Schmankerl-Abende auf den Almen.</p>
+        </div>
+
+        <div class="feature-card" style="text-align: left;">
+          <div class="feature-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3>Wellness & Mind/Body</h3>
+          <p>Herbst-Yoga im Kurpark, geführte Waldbade-Einheiten im Angertal, Klangbäder sowie nächtliche "After Work Spa" Erlebnisse.</p>
+        </div>
+
+        <div class="feature-card" style="text-align: left;">
+          <div class="feature-icon"><i class="fa-solid fa-music"></i></div>
+          <h3>Musik & Kultur</h3>
+          <p>Klassische Kammermusik-Abende, stimmungsvolle Jazz-Konzerte im Sägewerk, Gipfelbeat-Open-Airs und traditionelle Heimatabende.</p>
+        </div>
+
+        <div class="feature-card" style="text-align: left;">
+          <div class="feature-icon"><i class="fa-solid fa-compass"></i></div>
+          <h3>Geführte Entdeckungen</h3>
+          <p>Historische Spaziergänge durch Bad Gastein & Bad Hofgastein, geführte Nachtwanderungen und Naturführungen auf der Burg Klammstein.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hosts Section -->
+    <section>
+      <div class="hosts-card">
+        <img src="laura_and_rene (Groß).jpg" alt="Laura & Rene" class="hosts-img">
+        <div class="hosts-content">
+          <h3>Deine Gastgeber: Laura & Rene</h3>
+          <p>Wir freuen uns darauf, dich bei uns in Dorfgastein begrüßen zu dürfen! Ob Fragen zur Anreise, Ausflugstipps in die Region oder Empfehlungen für gemütliche Hütten – wir stehen dir gerne zur Seite.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Unterberg+110+Dorfgastein" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;">
+            <i class="fa-solid fa-map-pin"></i> Unterberg 110 (97), 5632 Dorfgastein
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Booking Banner -->
+    <div class="cta-banner">
+      <h2>Lust auf eine Auszeit in den Bergen bekommen?</h2>
+      <p>Besuche unser Inserat auf Airbnb für aktuelle Preise, Belegungszeiten und eine direkte, sichere Buchung!</p>
+      <a href="https://www.airbnb.at/rooms/1771137160750411539?unique_share_id=4d18c051-dcaa-4752-b8ab-0dd1552a1e92&viralityEntryPoint=1&s=76" target="_blank" class="btn btn-airbnb" style="padding: 14px 32px; font-size: 1.1rem;">
+        <i class="fa-brands fa-airbnb"></i> Jetzt auf Airbnb anfragen & buchen
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Ferienwohnung Dorfgastein – Bergblick & Therme | Laura & Rene</p>
+  </footer>
+
+  <!-- Gallery Filter Script -->
+  <script>
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
