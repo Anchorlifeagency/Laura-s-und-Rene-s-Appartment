@@ -35,7 +35,7 @@
     }
 
     html, body {
-      overflow-x: hidden; /* Verhindert seitliches Scrollen am Smartphone */
+      overflow-x: hidden;
       width: 100%;
     }
 
@@ -433,7 +433,7 @@
       margin-top: 36px;
     }
 
-    /* Interaktive Lightbox Styles */
+    /* Lightbox Styles */
     .lightbox {
       display: none;
       position: fixed;
@@ -498,7 +498,7 @@
 </head>
 <body>
 
-  <!-- Header Navigation (Ohne den Airbnb-Button rechts oben) -->
+  <!-- Header Navigation -->
   <header>
     <a href="#" class="brand">
       <i class="fa-solid fa-mountain-sun"></i>
@@ -515,7 +515,6 @@
       <h1>Stilvolle Auszeit im Gasteinertal</h1>
       <p>Erleben Sie Entspannung, Natur & Bergerlebnisse in unserem gemütlichen 42 m² Apartment am idyllischen Bauernhof in Unterberg bei Dorfgastein.</p>
       
-      <!-- Inkl. Therme Hinweis elegant platziert -->
       <div>
         <span class="hero-badge"><i class="fa-solid fa-hot-tub-person"></i> Inkl. Alpentherme Eintritt</span>
       </div>
@@ -528,12 +527,12 @@
 
   <div class="container">
 
-    <!-- Quick Features (Therme durch Aktivitäten ersetzt) -->
+    <!-- Quick Features (Korrigierte Betten-/Sofa-Beschreibung) -->
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="feature-icon"><i class="fa-solid fa-bed"></i></div>
         <h3>Bis zu 4 Gäste</h3>
-        <p>1 Schlafzimmer, 2 Betten, gemütliches Ausziehsofa</p>
+        <p>1 Schlafzimmer mit Doppelbett & gemütliches 160 cm Ausziehsofa im Wohnzimmer</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon"><i class="fa-solid fa-compass"></i></div>
@@ -552,7 +551,7 @@
       </div>
     </div>
 
-    <!-- Thermen Special Banner mit offiziellem Link -->
+    <!-- Thermen Special Banner -->
     <div class="therme-banner">
       <div class="therme-info">
         <h3><i class="fa-solid fa-spa"></i> Dein Plus: Freier Eintritt in die Alpentherme!</h3>
@@ -563,7 +562,7 @@
       </a>
     </div>
 
-    <!-- Foto Galerie Section mit Lightbox Funktion -->
+    <!-- Foto Galerie Section -->
     <section>
       <h2 class="section-title">Eindrücke aus der Unterkunft</h2>
       <p class="section-subtitle">Klicken Sie auf ein Bild, um es zu vergrößern.</p>
@@ -613,7 +612,7 @@
       </div>
     </section>
 
-    <!-- Region & Aktivitäten Section (mit den Bildern berg.jpg, ski.jpg, action.jpg) -->
+    <!-- Region & Aktivitäten Section -->
     <section>
       <h2 class="section-title">Erlebnisse & Region Gasteinertal</h2>
       <p class="section-subtitle">Dorfgastein ist der perfekte Ausgangspunkt für Abenteuer, Erholung und Naturgenuss – zu jeder Jahreszeit.</p>
@@ -645,7 +644,7 @@
       </div>
     </section>
 
-    <!-- Vielfältige Events in der Region (Gastein Highlights) -->
+    <!-- Vielfältige Events in der Region -->
     <section>
       <h2 class="section-title">Vielfalt & Events im Gasteinertal</h2>
       <p class="section-subtitle">Im Gasteinertal erwartet Sie das ganze Jahr über ein abwechslungsreiches Programm aus Kultur, Genuss, Sport & Wellness.</p>
@@ -714,7 +713,7 @@
     <p>© 2026 Ferienwohnung Dorfgastein – Bergblick & Therme | Laura & Rene</p>
   </footer>
 
-  <!-- Scripts: Gallery Filter & Lightbox -->
+  <!-- Scripts -->
   <script>
     function filterGallery(category) {
       const items = document.querySelectorAll('.gallery-item');
